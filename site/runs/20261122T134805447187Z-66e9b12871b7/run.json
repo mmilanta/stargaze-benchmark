@@ -799,20 +799,20 @@
       }
     },
     {
-      "id": "eclipse-umbra-edge",
-      "label": "Eclipse during totality",
-      "capture_key": "378e059d04eeab4c01a12b36a92ee5b22fe784475beb0d07b21d2bfd6ccb4f93",
+      "id": "ember-summit-before-eclipse",
+      "label": "Ember Summit before the eclipse",
+      "capture_key": "3ccb96c1754729ca29426659895e129aefd5fc36ce45ad8538448a808dc63265",
       "inputs": {
         "version": 1,
         "width": 1280,
         "height": 720,
         "samples": 1,
-        "exposure": 1,
-        "scene_sha256": "36a94c9a0e2c8d91805fb2162d4a0633d5ca1106fa5bbf60049ccee6a9840a4c"
+        "exposure": 0.16,
+        "scene_sha256": "dfdb2fc994e8ad57ab6d607b872a63c10317bdb4459c04e46568184b947bfa35"
       },
       "modes": {
         "eco": {
-          "image": "eclipse-umbra-edge-eco-1spp.png",
+          "image": "ember-summit-before-eclipse-eco-1spp.png",
           "trace_width": 640,
           "trace_height": 360,
           "preset": {
@@ -825,18 +825,18 @@
             "vegetation_percent": 35
           },
           "render_ms": [
-            29.236856,
-            29.318599,
-            28.889014
+            40.544043,
+            39.276253,
+            39.447266
           ],
           "process_ms": [
-            2019.4803079998564,
-            2042.4199640001461,
-            2047.0654369996737
+            2127.250321000247,
+            2155.2822210005615,
+            2125.310047000312
           ]
         },
         "balanced": {
-          "image": "eclipse-umbra-edge-balanced-1spp.png",
+          "image": "ember-summit-before-eclipse-balanced-1spp.png",
           "trace_width": 960,
           "trace_height": 540,
           "preset": {
@@ -849,18 +849,18 @@
             "vegetation_percent": 70
           },
           "render_ms": [
-            38.104382,
-            38.399791,
-            38.446528
+            62.604717,
+            62.237826000000005,
+            63.102625999999994
           ],
           "process_ms": [
-            2029.340162999688,
-            2034.400375000132,
-            2028.137501999936
+            2176.141805000043,
+            2177.136652000627,
+            2176.251535999654
           ]
         },
         "high": {
-          "image": "eclipse-umbra-edge-high-1spp.png",
+          "image": "ember-summit-before-eclipse-high-1spp.png",
           "trace_width": 1280,
           "trace_height": 720,
           "preset": {
@@ -873,34 +873,34 @@
             "vegetation_percent": 100
           },
           "render_ms": [
-            50.087673,
-            50.522886,
-            50.192187
+            92.313327,
+            98.614635,
+            92.95793300000001
           ],
           "process_ms": [
-            2066.165705000003,
-            2043.4159300002648,
-            2052.0170320000943
+            2247.9161629999,
+            2250.9873339995465,
+            2277.5985590005803
           ]
         }
       },
-      "captured_at": "2026-11-22T19:07:35.431330+00:00"
+      "captured_at": "2026-11-22T19:38:56.594580+00:00"
     },
     {
-      "id": "eclipse-umbra-edge",
-      "label": "Eclipse during totality",
-      "capture_key": "120be87e4ca9d23b475b8a9004baac0a07d815825589e5f318882c19e44cf380",
+      "id": "ember-summit-before-eclipse",
+      "label": "Ember Summit before the eclipse",
+      "capture_key": "0a7b71958dd3ddc02348706738ccc3bbcc2730d22b469297a5dd8218dba7b5a9",
       "inputs": {
         "version": 1,
         "width": 1280,
         "height": 720,
         "samples": 16,
-        "exposure": 1,
-        "scene_sha256": "36a94c9a0e2c8d91805fb2162d4a0633d5ca1106fa5bbf60049ccee6a9840a4c"
+        "exposure": 0.16,
+        "scene_sha256": "dfdb2fc994e8ad57ab6d607b872a63c10317bdb4459c04e46568184b947bfa35"
       },
       "modes": {
         "eco": {
-          "image": "eclipse-umbra-edge-eco-16spp.png",
+          "image": "ember-summit-before-eclipse-eco-16spp.png",
           "trace_width": 640,
           "trace_height": 360,
           "preset": {
@@ -913,18 +913,18 @@
             "vegetation_percent": 35
           },
           "render_ms": [
-            154.8995,
-            154.004528,
-            153.49328300000002
+            217.380628,
+            213.66228,
+            215.42729799999998
           ],
           "process_ms": [
-            2130.087026000183,
-            2130.8343360001345,
-            2167.920428999878
+            2276.5231549992677,
+            2272.6871969998683,
+            2273.5185980000097
           ]
         },
         "balanced": {
-          "image": "eclipse-umbra-edge-balanced-16spp.png",
+          "image": "ember-summit-before-eclipse-balanced-16spp.png",
           "trace_width": 960,
           "trace_height": 540,
           "preset": {
@@ -937,18 +937,18 @@
             "vegetation_percent": 70
           },
           "render_ms": [
-            281.597685,
-            280.35148300000003,
-            279.18352000000004
+            378.88144,
+            378.68892900000003,
+            379.853468
           ],
           "process_ms": [
-            2260.2591710001434,
-            2270.4092330000094,
-            2261.358697000105
+            2455.7197989997803,
+            2457.39208500072,
+            2449.453717999859
           ]
         },
         "high": {
-          "image": "eclipse-umbra-edge-high-16spp.png",
+          "image": "ember-summit-before-eclipse-high-16spp.png",
           "trace_width": 1280,
           "trace_height": 720,
           "preset": {
@@ -961,34 +961,34 @@
             "vegetation_percent": 100
           },
           "render_ms": [
-            387.276193,
-            387.99381999999997,
-            390.56825499999997
+            587.6741450000001,
+            587.664691,
+            586.851342
           ],
           "process_ms": [
-            2376.400725000167,
-            2374.4936610000877,
-            2374.627843000326
+            2681.3617719999456,
+            2686.9655939999575,
+            2680.8159579995845
           ]
         }
       },
-      "captured_at": "2026-11-22T19:07:35.431330+00:00"
+      "captured_at": "2026-11-22T19:38:56.594580+00:00"
     },
     {
-      "id": "eclipse-umbra-edge",
-      "label": "Eclipse during totality",
-      "capture_key": "66ef5f3ee8217233f4f9620bd9426c7ba866f9e23fde6195cde2bd52659bf463",
+      "id": "ember-summit-before-eclipse",
+      "label": "Ember Summit before the eclipse",
+      "capture_key": "41cdca04514d1897f21a2bfc3cae5b56fe0e8fd0ddb095369aeab2fd5a5b38b9",
       "inputs": {
         "version": 1,
         "width": 1280,
         "height": 720,
         "samples": 64,
-        "exposure": 1,
-        "scene_sha256": "36a94c9a0e2c8d91805fb2162d4a0633d5ca1106fa5bbf60049ccee6a9840a4c"
+        "exposure": 0.16,
+        "scene_sha256": "dfdb2fc994e8ad57ab6d607b872a63c10317bdb4459c04e46568184b947bfa35"
       },
       "modes": {
         "eco": {
-          "image": "eclipse-umbra-edge-eco-64spp.png",
+          "image": "ember-summit-before-eclipse-eco-64spp.png",
           "trace_width": 640,
           "trace_height": 360,
           "preset": {
@@ -1001,18 +1001,18 @@
             "vegetation_percent": 35
           },
           "render_ms": [
-            421.728418,
-            417.127646,
-            420.668406
+            635.341591,
+            641.240715,
+            636.780301
           ],
           "process_ms": [
-            2430.891633000101,
-            2447.156382999765,
-            2399.676397999883
+            2679.505565999534,
+            2705.652611000005,
+            2682.27783599923
           ]
         },
         "balanced": {
-          "image": "eclipse-umbra-edge-balanced-64spp.png",
+          "image": "ember-summit-before-eclipse-balanced-64spp.png",
           "trace_width": 960,
           "trace_height": 540,
           "preset": {
@@ -1025,18 +1025,18 @@
             "vegetation_percent": 70
           },
           "render_ms": [
-            722.458222,
-            720.704415,
-            713.1994940000001
+            1241.984579,
+            1234.583266,
+            1234.1288800000002
           ],
           "process_ms": [
-            2710.2492309995796,
-            2706.0116719999314,
-            2698.9375110001674
+            3308.9623680007207,
+            3286.254708999877,
+            3290.309298000466
           ]
         },
         "high": {
-          "image": "eclipse-umbra-edge-high-64spp.png",
+          "image": "ember-summit-before-eclipse-high-64spp.png",
           "trace_width": 1280,
           "trace_height": 720,
           "preset": {
@@ -1049,18 +1049,18 @@
             "vegetation_percent": 100
           },
           "render_ms": [
-            1072.5472140000002,
-            1074.803728,
-            1071.0435220000002
+            1995.293596,
+            1992.472468,
+            1993.351422
           ],
           "process_ms": [
-            3082.6255480001237,
-            3081.5547899997,
-            3079.373748999842
+            4112.6332900003035,
+            4065.986735000479,
+            4066.1745380002685
           ]
         }
       },
-      "captured_at": "2026-11-22T19:07:35.431330+00:00"
+      "captured_at": "2026-11-22T19:38:56.594580+00:00"
     }
   ]
 }

@@ -6,16 +6,15 @@ a shared sample count. The dashboard shows median render times, both captures,
 an amplified difference image, and descriptive RGB difference statistics. There
 is no ground-truth image or quality score.
 
-## Eclipse during totality
+## Ember Summit before the eclipse
 
-Choose **Eclipse during totality** in the dashboard's Scene menu to compare
-renderer revisions. The [pinned scene](scenes/eclipse-umbra-edge.yaml) starts
-about 25 seconds into totality. A dim glow remains low on the left while
-the right side of the sky is in shadow. Both revisions use exposure 1. Open
-the scene in Stargaze with
-`stargaze --config scenes/eclipse-umbra-edge.yaml`.
+Choose **Ember Summit before the eclipse** in the dashboard's Scene menu to
+compare renderer revisions one simulated minute before Calyx first crosses
+Aur's disc. The [pinned scene](scenes/ember-summit-before-eclipse.yaml) keeps
+both suns and the volcanic horizon in view. Open it in Stargaze with
+`stargaze --config scenes/ember-summit-before-eclipse.yaml`.
 
-The published eclipse captures were added to the existing runs using the same
+The published captures were added to the existing runs using the same
 renderer commits, GPU, and driver. Each new scene entry records its capture date.
 
 ## Capture a run
