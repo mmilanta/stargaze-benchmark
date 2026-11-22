@@ -1,9 +1,8 @@
-# Synthetic eclipse at the edge of totality. At the pinned epoch the moon's
-# center is 998 km east of the star's sightline and 100,000 km forward.
-# The 1,000 km-radius moon has just covered the tiny stellar disc at the camera.
+# A synthetic eclipse 24 seconds after the observatory first enters totality.
+# The nearby air is eclipsed, while low air toward the left horizon remains lit.
 version: 1
-name: Eclipse at the edge of totality
-time_days: 0
+name: Eclipse during totality
+time_days: 0.000277777777777778
 camera:
   body: world
   latitude_deg: 0

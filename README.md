@@ -6,14 +6,17 @@ a shared sample count. The dashboard shows median render times, both captures,
 an amplified difference image, and descriptive RGB difference statistics. There
 is no ground-truth image or quality score.
 
-## Eclipse at the edge of totality
+## Eclipse during totality
 
-Just after totality begins at the observatory, the Moon's shadow darkens the
-right side of the sky while the atmosphere on the left still catches direct
-sunlight. [View the High preset capture at 64 spp](site/images/eclipse-umbra-edge.png).
-The default suite includes this [pinned scene](scenes/eclipse-umbra-edge.yaml)
-at exposure 1. Open the scene in Stargaze with
+Choose **Eclipse during totality** in the dashboard's Scene menu to compare
+renderer revisions. The [pinned scene](scenes/eclipse-umbra-edge.yaml) starts
+about 25 seconds into totality. A dim glow remains low on the left while
+the right side of the sky is in shadow. Both revisions use exposure 1. Open
+the scene in Stargaze with
 `stargaze --config scenes/eclipse-umbra-edge.yaml`.
+
+The published eclipse captures were added to the existing runs using the same
+renderer commits, GPU, and driver. Each new scene entry records its capture date.
 
 ## Capture a run
 

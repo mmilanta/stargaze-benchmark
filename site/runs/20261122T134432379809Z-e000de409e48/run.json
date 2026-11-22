@@ -797,6 +797,270 @@
           ]
         }
       }
+    },
+    {
+      "id": "eclipse-umbra-edge",
+      "label": "Eclipse during totality",
+      "capture_key": "378e059d04eeab4c01a12b36a92ee5b22fe784475beb0d07b21d2bfd6ccb4f93",
+      "inputs": {
+        "version": 1,
+        "width": 1280,
+        "height": 720,
+        "samples": 1,
+        "exposure": 1,
+        "scene_sha256": "36a94c9a0e2c8d91805fb2162d4a0633d5ca1106fa5bbf60049ccee6a9840a4c"
+      },
+      "modes": {
+        "eco": {
+          "image": "eclipse-umbra-edge-eco-1spp.png",
+          "trace_width": 640,
+          "trace_height": 360,
+          "preset": {
+            "max_fps": 15,
+            "resolution_percent": 50,
+            "max_bounces": 2,
+            "samples_per_frame": 1,
+            "still_samples": 128,
+            "hud_scale_percent": 100,
+            "vegetation_percent": 35
+          },
+          "render_ms": [
+            29.408709,
+            28.882621,
+            28.564115
+          ],
+          "process_ms": [
+            2026.7007860002195,
+            2050.251059999937,
+            2015.8045920002223
+          ]
+        },
+        "balanced": {
+          "image": "eclipse-umbra-edge-balanced-1spp.png",
+          "trace_width": 960,
+          "trace_height": 540,
+          "preset": {
+            "max_fps": 30,
+            "resolution_percent": 75,
+            "max_bounces": 4,
+            "samples_per_frame": 1,
+            "still_samples": 256,
+            "hud_scale_percent": 100,
+            "vegetation_percent": 70
+          },
+          "render_ms": [
+            38.01935,
+            38.154004,
+            37.757881
+          ],
+          "process_ms": [
+            2056.0094370002844,
+            2058.9720429998124,
+            2064.8636740002075
+          ]
+        },
+        "high": {
+          "image": "eclipse-umbra-edge-high-1spp.png",
+          "trace_width": 1280,
+          "trace_height": 720,
+          "preset": {
+            "max_fps": 60,
+            "resolution_percent": 100,
+            "max_bounces": 8,
+            "samples_per_frame": 1,
+            "still_samples": 1024,
+            "hud_scale_percent": 100,
+            "vegetation_percent": 100
+          },
+          "render_ms": [
+            49.945648000000006,
+            50.138141,
+            50.351513
+          ],
+          "process_ms": [
+            2046.672535000198,
+            2044.8958329998277,
+            2045.0382619997072
+          ]
+        }
+      },
+      "captured_at": "2026-11-22T19:06:25.346831+00:00"
+    },
+    {
+      "id": "eclipse-umbra-edge",
+      "label": "Eclipse during totality",
+      "capture_key": "120be87e4ca9d23b475b8a9004baac0a07d815825589e5f318882c19e44cf380",
+      "inputs": {
+        "version": 1,
+        "width": 1280,
+        "height": 720,
+        "samples": 16,
+        "exposure": 1,
+        "scene_sha256": "36a94c9a0e2c8d91805fb2162d4a0633d5ca1106fa5bbf60049ccee6a9840a4c"
+      },
+      "modes": {
+        "eco": {
+          "image": "eclipse-umbra-edge-eco-16spp.png",
+          "trace_width": 640,
+          "trace_height": 360,
+          "preset": {
+            "max_fps": 15,
+            "resolution_percent": 50,
+            "max_bounces": 2,
+            "samples_per_frame": 1,
+            "still_samples": 128,
+            "hud_scale_percent": 100,
+            "vegetation_percent": 35
+          },
+          "render_ms": [
+            154.562086,
+            153.245163,
+            153.567446
+          ],
+          "process_ms": [
+            2135.224716999801,
+            2161.5400280002177,
+            2135.576785000012
+          ]
+        },
+        "balanced": {
+          "image": "eclipse-umbra-edge-balanced-16spp.png",
+          "trace_width": 960,
+          "trace_height": 540,
+          "preset": {
+            "max_fps": 30,
+            "resolution_percent": 75,
+            "max_bounces": 4,
+            "samples_per_frame": 1,
+            "still_samples": 256,
+            "hud_scale_percent": 100,
+            "vegetation_percent": 70
+          },
+          "render_ms": [
+            281.540428,
+            278.837722,
+            276.514835
+          ],
+          "process_ms": [
+            2294.977741999901,
+            2284.872187000019,
+            2293.4147089999897
+          ]
+        },
+        "high": {
+          "image": "eclipse-umbra-edge-high-16spp.png",
+          "trace_width": 1280,
+          "trace_height": 720,
+          "preset": {
+            "max_fps": 60,
+            "resolution_percent": 100,
+            "max_bounces": 8,
+            "samples_per_frame": 1,
+            "still_samples": 1024,
+            "hud_scale_percent": 100,
+            "vegetation_percent": 100
+          },
+          "render_ms": [
+            384.493403,
+            386.878302,
+            386.515406
+          ],
+          "process_ms": [
+            2375.816153999949,
+            2382.061603999773,
+            2366.0319290002008
+          ]
+        }
+      },
+      "captured_at": "2026-11-22T19:06:25.346831+00:00"
+    },
+    {
+      "id": "eclipse-umbra-edge",
+      "label": "Eclipse during totality",
+      "capture_key": "66ef5f3ee8217233f4f9620bd9426c7ba866f9e23fde6195cde2bd52659bf463",
+      "inputs": {
+        "version": 1,
+        "width": 1280,
+        "height": 720,
+        "samples": 64,
+        "exposure": 1,
+        "scene_sha256": "36a94c9a0e2c8d91805fb2162d4a0633d5ca1106fa5bbf60049ccee6a9840a4c"
+      },
+      "modes": {
+        "eco": {
+          "image": "eclipse-umbra-edge-eco-64spp.png",
+          "trace_width": 640,
+          "trace_height": 360,
+          "preset": {
+            "max_fps": 15,
+            "resolution_percent": 50,
+            "max_bounces": 2,
+            "samples_per_frame": 1,
+            "still_samples": 128,
+            "hud_scale_percent": 100,
+            "vegetation_percent": 35
+          },
+          "render_ms": [
+            416.94322700000004,
+            417.066025,
+            418.58414100000005
+          ],
+          "process_ms": [
+            2399.396852999871,
+            2425.4100980001567,
+            2403.454661000069
+          ]
+        },
+        "balanced": {
+          "image": "eclipse-umbra-edge-balanced-64spp.png",
+          "trace_width": 960,
+          "trace_height": 540,
+          "preset": {
+            "max_fps": 30,
+            "resolution_percent": 75,
+            "max_bounces": 4,
+            "samples_per_frame": 1,
+            "still_samples": 256,
+            "hud_scale_percent": 100,
+            "vegetation_percent": 70
+          },
+          "render_ms": [
+            716.1904129999999,
+            711.788139,
+            713.52661
+          ],
+          "process_ms": [
+            2729.548804999922,
+            2718.0347550001898,
+            2695.9122240000397
+          ]
+        },
+        "high": {
+          "image": "eclipse-umbra-edge-high-64spp.png",
+          "trace_width": 1280,
+          "trace_height": 720,
+          "preset": {
+            "max_fps": 60,
+            "resolution_percent": 100,
+            "max_bounces": 8,
+            "samples_per_frame": 1,
+            "still_samples": 1024,
+            "hud_scale_percent": 100,
+            "vegetation_percent": 100
+          },
+          "render_ms": [
+            1070.0938689999998,
+            1071.717198,
+            1066.309617
+          ],
+          "process_ms": [
+            3052.0804490001865,
+            3055.4800360000627,
+            3048.998811999809
+          ]
+        }
+      },
+      "captured_at": "2026-11-22T19:06:25.346831+00:00"
     }
   ]
 }
