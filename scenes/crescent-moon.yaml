@@ -1,0 +1,40 @@
+# Synthetic Earth-size observatory with a prominent, roughly 10% crescent.
+# The Sun is 16 degrees below the eastern horizon at the fixed epoch.
+version: 1
+name: Crescent moonlight
+time_days: 0
+camera:
+  body: world
+  latitude_deg: 0
+  longitude_deg: 0
+  height_m: 2
+  look_at: moon
+  direction: {azimuth_deg: 90, altitude_deg: 16}
+  fov_deg: 55
+  atmosphere: earthlike
+  ground: basalt
+bodies:
+  - id: sun
+    kind: star
+    radius_km: 696340
+    luminosity: 1
+    emission: [1, 0.95, 0.88]
+  - id: world
+    kind: planet
+    parent: sun
+    radius_km: 6371
+    albedo: [0.15, 0.15, 0.15]
+    orbit:
+      semi_major_axis_au: 0.9833
+      period_days: 365.256
+      mean_anomaly_deg: 286
+  - id: moon
+    kind: moon
+    parent: world
+    radius_km: 14959.78707
+    albedo: [0.8, 0.8, 0.8]
+    orbit:
+      semi_major_axis_au: 0.002
+      period_days: 27.32
+      mean_anomaly_deg: 68.06
+    rotation: {mode: tidal_lock}

@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "width": 1280,
+  "height": 720,
+  "samples": 16,
+  "repeats": 3,
+  "scenes": [
+    {"id": "crescent-moon", "label": "Crescent moonlight", "exposure": 64},
+    {"id": "halo-volcano", "label": "Halo volcano", "exposure": 0.08},
+    {"id": "erg-dunes", "label": "Erg dunes", "exposure": 0.16}
+  ]
+}

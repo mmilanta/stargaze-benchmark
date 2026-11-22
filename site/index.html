@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stargaze Renderer Benchmark</title>
+  <meta name="description" content="Compare Stargaze renderer timings and captures across revisions and graphics presets.">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./viewer.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Stargaze <span>Renderer Benchmark</span></h1>
+    <a href="https://github.com/mmilanta/stargaze-benchmark">Source on GitHub</a>
+  </header>
+  <main>
+    <p role="status" id="status">Loading runs…</p>
+    <div id="benchmark" hidden>
+      <form id="selection" aria-label="Compare runs">
+        <fieldset>
+          <legend>Left</legend>
+          <label>Run<select id="left-run"></select></label>
+          <label>Preset<select id="left-mode"></select></label>
+        </fieldset>
+        <fieldset>
+          <legend>Right</legend>
+          <label>Run<select id="right-run"></select></label>
+          <label>Preset<select id="right-mode"></select></label>
+        </fieldset>
+        <label class="scene">Scene<select id="scene"></select></label>
+      </form>
+      <section id="comparison" aria-labelledby="scene-name" hidden>
+        <div class="section-heading">
+          <div>
+            <h2 id="scene-name"></h2>
+            <p id="inputs"></p>
+          </div>
+          <p id="devices"></p>
+        </div>
+        <div class="meters" id="timings" aria-label="Median render time"></div>
+        <p id="timing-note"></p>
+        <div class="images">
+          <figure>
+            <figcaption id="left-caption">Left render</figcaption>
+            <a id="left-image-link"><img id="left-image" alt="Left render"></a>
+          </figure>
+          <figure>
+            <figcaption id="right-caption">Right render</figcaption>
+            <a id="right-image-link"><img id="right-image" alt="Right render"></a>
+          </figure>
+          <figure>
+            <figcaption>
+              <span>Absolute difference</span>
+              <label id="gain-label">Gain <input id="gain" type="range" min="1" max="16" value="8" step="1"><output id="gain-value" for="gain">8×</output></label>
+            </figcaption>
+            <canvas id="difference" role="img" aria-label="Amplified absolute RGB difference"></canvas>
+          </figure>
+        </div>
+        <p id="diff-stats" aria-live="polite"></p>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

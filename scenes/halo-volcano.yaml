@@ -1,0 +1,254 @@
+# Stargaze system format v1. Distances and angles use explicit units.
+# Omit time_days to search for a suitable night view; set it for an exact epoch.
+# Orbit angles are measured in the shared ecliptic frame, including moon orbits.
+# Level 1 — the volcano ground. Halo, tidally locked to the ringed planet
+# Calyx, which orbits a yellow and an orange star (two suns, two shadows).
+# The suns are a close pair, 0.24 AU apart (never more than ~3.3 degrees in
+# Halo's sky), so Calyx often hides both at once: a double eclipse at the
+# near side's noon.
+# Halo orbits 110,000 km from Calyx (period by Kepler's third law), so Calyx
+# spans ~7 degrees and its rings ~13 degrees, ~22 degrees above the western
+# horizon: the observatory stands near the edge of Halo's Calyx-facing side,
+# where the suns set behind the planet.
+# Halo's orbit, and so its tidally locked spin axis, is tilted 5 degrees to
+# Calyx's orbit: mild seasons over Calyx's 3000-day year, and eclipses of the
+# suns in long eclipse seasons, when the suns lie near the orbit's nodes.
+# The tilt is away from the ring plane, so the rings open up to ~27 degrees
+# over each Halo orbit.
+version: 1
+# Open on a clear afternoon in an eclipse season, facing Calyx in the west:
+# both suns sink toward it, vanish behind it together for ~10 hours from day
+# ~732.8 (a total double eclipse ~24 degrees up), re-emerge toward
+# evening, and set around day 735.5.
+time_days: 730.5
+name: Calyx and Halo — the volcano
+camera:
+  body: halo
+  latitude_deg: 35.0
+  longitude_deg: -118.0
+  height_m: 2.0
+  look_at: calyx
+  # Calyx stands at azimuth ~253, the suns ~18 degrees above it.
+  direction: {azimuth_deg: 253, altitude_deg: 15}
+  fov_deg: 70.0
+  atmosphere: earthlike
+  ground: basalt
+targets:
+  - calyx
+  - aur
+  - igni
+  - umbra
+  - nerid
+  - vantus
+  - pip
+  - iri
+  - kesh
+bodies:
+  - id: barycentre
+    name: Barycentre
+    kind: anchor
+    radius_km: 0.0
+  - id: aur
+    name: Aur
+    kind: star
+    parent: barycentre
+    radius_km: 4487936.121
+    albedo: [0.0, 0.0, 0.0]
+    # 6.5x the original 2.0: Earth-like daylight at Halo, 4.2 AU away.
+    luminosity: 13.0
+    emission: [1.0, 0.96, 0.86]
+    orbit:
+      # Was 0.3 + 0.5 AU at 120 days; same masses, Kepler's third law.
+      semi_major_axis_au: 0.09
+      period_days: 19.72
+    rotation:
+      mode: free
+      period_days: 22.0
+  - id: igni
+    name: Igni
+    kind: star
+    parent: barycentre
+    radius_km: 2692761.6726
+    albedo: [0.0, 0.0, 0.0]
+    luminosity: 4.55
+    emission: [1.0, 0.42, 0.2]
+    orbit:
+      semi_major_axis_au: 0.15
+      period_days: 19.72
+      mean_anomaly_deg: 180.0
+    rotation:
+      mode: free
+      period_days: 30.0
+  - id: nerid
+    name: Nerid
+    kind: planet
+    parent: barycentre
+    # Enlarged and brightened so Nerid shines as a bright wandering star.
+    radius_km: 12000.0
+    albedo: [0.68, 0.75, 0.82]
+    orbit:
+      semi_major_axis_au: 2.6
+      period_days: 1530.0
+      eccentricity: 0.03
+      inclination_deg: 1.5
+      ascending_node_deg: 22.9183118052
+      periapsis_deg: 63.0253574644
+      mean_anomaly_deg: 114.5915590262
+    rotation:
+      mode: free
+      period_days: 0.85
+      obliquity_deg: 18.0
+    surface: {style: icy, seed: 1}
+  - id: pip
+    name: Pip
+    kind: moon
+    parent: nerid
+    radius_km: 1200.0
+    albedo: [0.6, 0.6, 0.62]
+    orbit:
+      period_days: 2.5
+      eccentricity: 0.01
+      inclination_deg: 2.0
+      periapsis_deg: 28.6478897565
+      mean_anomaly_deg: 57.2957795131
+      semi_major_axis_km: 32911.531554
+    rotation:
+      mode: free
+      period_days: 2.5
+      obliquity_deg: 2.0
+    surface: {style: cratered, seed: 2}
+  - id: calyx
+    name: Calyx
+    kind: planet
+    parent: barycentre
+    radius_km: 6500.0
+    albedo: [0.72, 0.6, 0.42]
+    orbit:
+      semi_major_axis_au: 4.2
+      period_days: 3000.0
+      eccentricity: 0.02
+      inclination_deg: 1.0
+      ascending_node_deg: 114.5915590262
+      periapsis_deg: 171.8873385392
+      mean_anomaly_deg: 257.8310078089
+    rotation:
+      mode: free
+      period_days: 0.6
+      obliquity_deg: 22.0
+    rings:
+      inner_radius: 1.25
+      outer_radius: 1.9
+      optical_depth: 1.0
+      albedo: [0.88, 0.8, 0.66]
+      banded: true
+    # A small gas planet: turbulent belts and storms, no solid surface.
+    surface: {style: gas_giant, seed: 3, bands: 8, turbulence: 0.6, storms: 2}
+  - id: halo
+    name: Halo
+    kind: moon
+    parent: calyx
+    radius_km: 1500.0
+    albedo: [0.55, 0.57, 0.6]
+    orbit:
+      period_days: 34.481725
+      inclination_deg: 5.0
+      ascending_node_deg: 270.0
+      periapsis_deg: -90.0
+      semi_major_axis_km: 110000.0
+    rotation:
+      mode: tidal_lock
+  - id: umbra
+    name: Umbra
+    kind: moon
+    parent: calyx
+    radius_km: 1000.0
+    albedo: [0.35, 0.33, 0.32]
+    orbit:
+      period_days: 8.0
+      eccentricity: 0.01
+      inclination_deg: 1.5
+      ascending_node_deg: 57.2957795131
+      periapsis_deg: 114.5915590262
+      mean_anomaly_deg: 171.8873385392
+      semi_major_axis_km: 47871.318624
+    rotation:
+      mode: free
+      period_days: 8.0
+      obliquity_deg: 1.5000000000000002
+    surface: {style: cratered, seed: 4}
+  - id: vantus
+    name: Vantus
+    kind: planet
+    parent: barycentre
+    # The far giant, Jupiter-like (Jupiter is 71,500 km): a brilliant
+    # wandering star at night, a thin, faint dusty ring close in.
+    radius_km: 75000.0
+    albedo: [0.62, 0.68, 0.78]
+    orbit:
+      semi_major_axis_au: 6.8
+      period_days: 6200.0
+      eccentricity: 0.05
+      inclination_deg: 2.5
+      ascending_node_deg: 85.9436692696
+      periapsis_deg: 45.8366236105
+      mean_anomaly_deg: 68.7549354157
+    rotation:
+      mode: free
+      period_days: 0.4
+      obliquity_deg: 12.0
+    surface: {style: gas_giant, seed: 11, bands: 6, turbulence: 0.7, storms: 2}
+    rings:
+      inner_radius: 1.3
+      outer_radius: 1.4
+      optical_depth: 0.03
+      albedo: [0.62, 0.55, 0.48]
+      banded: false
+  # Two big moons in Vantus's equatorial plane (inclination = obliquity,
+  # node 90); periods by Kepler's law for a ~2.2e27 kg giant.
+  - id: iri
+    name: Iri
+    kind: moon
+    parent: vantus
+    radius_km: 2600.0
+    albedo: [0.80, 0.80, 0.82]
+    orbit:
+      semi_major_axis_km: 670000.0
+      period_days: 3.29
+      eccentricity: 0.002
+      inclination_deg: 12.0
+      ascending_node_deg: 90.0
+      mean_anomaly_deg: 28.6
+    rotation:
+      mode: tidal_lock
+    surface: {style: icy, seed: 5}
+  - id: kesh
+    name: Kesh
+    kind: moon
+    parent: vantus
+    radius_km: 2400.0
+    albedo: [0.82, 0.74, 0.36]
+    orbit:
+      semi_major_axis_km: 1900000.0
+      period_days: 15.7
+      eccentricity: 0.007
+      inclination_deg: 12.0
+      ascending_node_deg: 90.0
+      mean_anomaly_deg: 143.2
+    rotation:
+      mode: tidal_lock
+    surface: {style: volcanic, seed: 6}
+  # Kesh's own tiny moon, well inside its ~55,000 km Hill sphere.
+  - id: mote
+    name: Mote
+    kind: moon
+    parent: kesh
+    radius_km: 150.0
+    albedo: [0.3, 0.32, 0.38]
+    orbit:
+      semi_major_axis_km: 15000.0
+      period_days: 1.33
+      inclination_deg: 12.0
+      ascending_node_deg: 90.0
+    rotation:
+      mode: tidal_lock
+    surface: {style: cratered, seed: 7}

@@ -1,0 +1,280 @@
+{
+  "version": 1,
+  "id": "20261122T133346835180Z-e000de409e48",
+  "ref": "benchmark/headless-baseline",
+  "commit": "e000de409e486b9485314399642877417b8ad290",
+  "created": "2026-11-22T13:33:46.835180+00:00",
+  "hardware": {
+    "gpu": "AMD Radeon RX 7600 XT (RADV NAVI33)",
+    "backend": "Vulkan",
+    "driver": "radv",
+    "driver_info": "Mesa 26.2.5-arch1.1",
+    "cpu": "AMD Ryzen 7 9800X3D 8-Core Processor",
+    "os": "Linux",
+    "arch": "x86_64"
+  },
+  "repeats": 3,
+  "scenes": [
+    {
+      "id": "crescent-moon",
+      "label": "Crescent moonlight",
+      "capture_key": "80b3095dc6d5ee5a0c24e7326b9451d1b821fedd3cc2db87f68ab552271a71b7",
+      "inputs": {
+        "version": 1,
+        "width": 1280,
+        "height": 720,
+        "samples": 16,
+        "exposure": 64,
+        "scene_sha256": "f4235e747e47f3d4ea273102725f58721437dd5a9f8ebb4062577c970154d9bf"
+      },
+      "modes": {
+        "eco": {
+          "image": "crescent-moon-eco.png",
+          "trace_width": 640,
+          "trace_height": 360,
+          "preset": {
+            "max_fps": 15,
+            "resolution_percent": 50,
+            "max_bounces": 2,
+            "samples_per_frame": 1,
+            "still_samples": 128,
+            "hud_scale_percent": 100,
+            "vegetation_percent": 35
+          },
+          "render_ms": [
+            60.13516,
+            61.132143,
+            60.720405
+          ],
+          "process_ms": [
+            4498.725891000504,
+            2154.9478240003737,
+            2148.1976979994215
+          ]
+        },
+        "balanced": {
+          "image": "crescent-moon-balanced.png",
+          "trace_width": 960,
+          "trace_height": 540,
+          "preset": {
+            "max_fps": 30,
+            "resolution_percent": 75,
+            "max_bounces": 4,
+            "samples_per_frame": 1,
+            "still_samples": 256,
+            "hud_scale_percent": 100,
+            "vegetation_percent": 70
+          },
+          "render_ms": [
+            107.99769500000001,
+            102.673264,
+            110.095243
+          ],
+          "process_ms": [
+            2217.724453000301,
+            2209.239324000009,
+            2218.291191999924
+          ]
+        },
+        "high": {
+          "image": "crescent-moon-high.png",
+          "trace_width": 1280,
+          "trace_height": 720,
+          "preset": {
+            "max_fps": 60,
+            "resolution_percent": 100,
+            "max_bounces": 8,
+            "samples_per_frame": 1,
+            "still_samples": 1024,
+            "hud_scale_percent": 100,
+            "vegetation_percent": 100
+          },
+          "render_ms": [
+            165.747072,
+            173.08223999999998,
+            176.379231
+          ],
+          "process_ms": [
+            2315.828204999889,
+            2295.299338999939,
+            2294.397251999726
+          ]
+        }
+      }
+    },
+    {
+      "id": "halo-volcano",
+      "label": "Halo volcano",
+      "capture_key": "137386c74e7080f0231b60305a0d98d6597ac1c20b0ee64eb2c5a96ae91d2646",
+      "inputs": {
+        "version": 1,
+        "width": 1280,
+        "height": 720,
+        "samples": 16,
+        "exposure": 0.08,
+        "scene_sha256": "051431221d07b3c437e2273f69b10fae57c328f7778f463b0da69f3cc4bc9e1b"
+      },
+      "modes": {
+        "eco": {
+          "image": "halo-volcano-eco.png",
+          "trace_width": 640,
+          "trace_height": 360,
+          "preset": {
+            "max_fps": 15,
+            "resolution_percent": 50,
+            "max_bounces": 2,
+            "samples_per_frame": 1,
+            "still_samples": 128,
+            "hud_scale_percent": 100,
+            "vegetation_percent": 35
+          },
+          "render_ms": [
+            174.56736,
+            186.310052,
+            176.443348
+          ],
+          "process_ms": [
+            2208.2216939998034,
+            2256.0794880000685,
+            2212.0282030000453
+          ]
+        },
+        "balanced": {
+          "image": "halo-volcano-balanced.png",
+          "trace_width": 960,
+          "trace_height": 540,
+          "preset": {
+            "max_fps": 30,
+            "resolution_percent": 75,
+            "max_bounces": 4,
+            "samples_per_frame": 1,
+            "still_samples": 256,
+            "hud_scale_percent": 100,
+            "vegetation_percent": 70
+          },
+          "render_ms": [
+            346.26071,
+            345.31943,
+            370.706206
+          ],
+          "process_ms": [
+            2395.295975999943,
+            2398.6969830002636,
+            2425.5651319999743
+          ]
+        },
+        "high": {
+          "image": "halo-volcano-high.png",
+          "trace_width": 1280,
+          "trace_height": 720,
+          "preset": {
+            "max_fps": 60,
+            "resolution_percent": 100,
+            "max_bounces": 8,
+            "samples_per_frame": 1,
+            "still_samples": 1024,
+            "hud_scale_percent": 100,
+            "vegetation_percent": 100
+          },
+          "render_ms": [
+            600.090833,
+            568.210183,
+            563.429212
+          ],
+          "process_ms": [
+            2665.9146120000514,
+            2633.2302090004305,
+            2661.679429999822
+          ]
+        }
+      }
+    },
+    {
+      "id": "erg-dunes",
+      "label": "Erg dunes",
+      "capture_key": "07637595a3c5b860717e9069044cced362377ee3044cd8fea587b307560b254f",
+      "inputs": {
+        "version": 1,
+        "width": 1280,
+        "height": 720,
+        "samples": 16,
+        "exposure": 0.16,
+        "scene_sha256": "8ae84aa35f144923f38d70bbd5367642580b9a42b2463324c74c0a29e8b07fa8"
+      },
+      "modes": {
+        "eco": {
+          "image": "erg-dunes-eco.png",
+          "trace_width": 640,
+          "trace_height": 360,
+          "preset": {
+            "max_fps": 15,
+            "resolution_percent": 50,
+            "max_bounces": 2,
+            "samples_per_frame": 1,
+            "still_samples": 128,
+            "hud_scale_percent": 100,
+            "vegetation_percent": 35
+          },
+          "render_ms": [
+            157.985302,
+            170.25330399999999,
+            155.940525
+          ],
+          "process_ms": [
+            2255.747365999923,
+            2269.283763000203,
+            2263.1718279999404
+          ]
+        },
+        "balanced": {
+          "image": "erg-dunes-balanced.png",
+          "trace_width": 960,
+          "trace_height": 540,
+          "preset": {
+            "max_fps": 30,
+            "resolution_percent": 75,
+            "max_bounces": 4,
+            "samples_per_frame": 1,
+            "still_samples": 256,
+            "hud_scale_percent": 100,
+            "vegetation_percent": 70
+          },
+          "render_ms": [
+            336.600487,
+            331.89565799999997,
+            337.763303
+          ],
+          "process_ms": [
+            2444.4125480004004,
+            2441.1458320000747,
+            2442.187933999776
+          ]
+        },
+        "high": {
+          "image": "erg-dunes-high.png",
+          "trace_width": 1280,
+          "trace_height": 720,
+          "preset": {
+            "max_fps": 60,
+            "resolution_percent": 100,
+            "max_bounces": 8,
+            "samples_per_frame": 1,
+            "still_samples": 1024,
+            "hud_scale_percent": 100,
+            "vegetation_percent": 100
+          },
+          "render_ms": [
+            578.841931,
+            580.3286949999999,
+            580.4567059999999
+          ],
+          "process_ms": [
+            2717.1053199999733,
+            2717.255290000139,
+            2716.912812999908
+          ]
+        }
+      }
+    }
+  ]
+}

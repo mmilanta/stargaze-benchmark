@@ -1,0 +1,32 @@
+[
+  {
+    "id": "20261122T133459974186Z-66e9b12871b7",
+    "ref": "benchmark/headless-render-v1",
+    "commit": "66e9b12871b70cf764b3b707457af0dd7ef06ba5",
+    "created": "2026-11-22T13:34:59.974186+00:00",
+    "hardware": {
+      "gpu": "AMD Radeon RX 7600 XT (RADV NAVI33)",
+      "backend": "Vulkan",
+      "driver": "radv",
+      "driver_info": "Mesa 26.2.5-arch1.1",
+      "cpu": "AMD Ryzen 7 9800X3D 8-Core Processor",
+      "os": "Linux",
+      "arch": "x86_64"
+    }
+  },
+  {
+    "id": "20261122T133346835180Z-e000de409e48",
+    "ref": "benchmark/headless-baseline",
+    "commit": "e000de409e486b9485314399642877417b8ad290",
+    "created": "2026-11-22T13:33:46.835180+00:00",
+    "hardware": {
+      "gpu": "AMD Radeon RX 7600 XT (RADV NAVI33)",
+      "backend": "Vulkan",
+      "driver": "radv",
+      "driver_info": "Mesa 26.2.5-arch1.1",
+      "cpu": "AMD Ryzen 7 9800X3D 8-Core Processor",
+      "os": "Linux",
+      "arch": "x86_64"
+    }
+  }
+]
