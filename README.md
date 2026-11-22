@@ -1,10 +1,10 @@
 # Stargaze Renderer Benchmark
 
 [Open the benchmark dashboard](https://mmilanta.github.io/stargaze-benchmark/).
-Choose a Stargaze run and graphics preset on each side, then choose a scene. The
-dashboard shows median render times, both captures, an amplified difference image,
-and descriptive RGB difference statistics. There is no ground-truth image or
-quality score.
+Choose a Stargaze run and graphics preset on each side, then choose a scene and
+a shared sample count. The dashboard shows median render times, both captures,
+an amplified difference image, and descriptive RGB difference statistics. There
+is no ground-truth image or quality score.
 
 ## Capture a run
 
@@ -20,11 +20,13 @@ python3 benchmark.py run origin/benchmark/headless-baseline origin/benchmark/hea
 Each argument is a branch, tag, or commit hash in the source checkout. The runner
 resolves every argument to a commit before building, uses disposable detached
 worktrees, and reads the pinned scenes under `scenes/`. A run captures Eco,
-Balanced, and High for each scene. The app selects its own preset settings and
-reports the effective trace resolution and settings with each capture.
+Balanced, and High at **1, 16, and 64 samples per pixel** for each scene. The app
+selects its own preset settings and reports the effective trace resolution and
+settings with each capture.
 `--adapter 'RX 7600'` selects a specific GPU by name. `--suite FILE` accepts
 another version 1 suite using the checked-in scenes, and `--target-dir PATH`
-can reuse a Cargo build cache.
+can reuse a Cargo build cache. The suite's `samples` setting accepts a single
+count or a list of counts.
 
 Only revisions supporting the [headless render interface](#render-interface)
 can be run directly. The two initial refs carry the same interface on top of

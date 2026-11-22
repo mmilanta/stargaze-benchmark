@@ -6,6 +6,7 @@ const rightRun = byId("right-run");
 const leftMode = byId("left-mode");
 const rightMode = byId("right-mode");
 const scenePicker = byId("scene");
+const samplePicker = byId("samples");
 const preview = byId("comparison");
 const status = byId("status");
 const canvas = byId("difference");
@@ -125,21 +126,33 @@ function deviceLabel(hardware) {
 async function refresh() {
   const selection = ++newestSelection;
   const initialScene = scenePicker.value;
+  const initialSamples = Number(samplePicker.value);
   preview.hidden = true;
   showStatus("Loading comparison…");
   try {
     const [left, right] = await Promise.all([loadRun(leftRun.value), loadRun(rightRun.value)]);
     if (selection !== newestSelection) return;
-    const common = left.scenes.filter(scene =>
-      right.scenes.some(candidate => candidate.id === scene.id && candidate.capture_key === scene.capture_key));
-    scenePicker.replaceChildren(...common.map(scene => new Option(scene.label, scene.id)));
+    const counterpart = scene => right.scenes.find(candidate =>
+      candidate.id === scene.id && candidate.capture_key === scene.capture_key);
+    const common = left.scenes.filter(counterpart);
+    const scenes = new Map(common.map(scene => [scene.id, scene.label]));
+    scenePicker.replaceChildren(...Array.from(scenes, ([id, label]) => new Option(label, id)));
     if (!common.length) {
+      samplePicker.replaceChildren();
+      samplePicker.disabled = true;
       showStatus("These runs have no scene with matching inputs.");
       return;
     }
-    if (common.some(scene => scene.id === initialScene)) scenePicker.value = initialScene;
-    const scene = common.find(item => item.id === scenePicker.value);
-    const rightScene = right.scenes.find(item => item.id === scene.id);
+    if (scenes.has(initialScene)) scenePicker.value = initialScene;
+    const captures = common.filter(scene => scene.id === scenePicker.value);
+    const sampleCounts = captures.map(scene => scene.inputs.samples).sort((a, b) => a - b);
+    samplePicker.replaceChildren(...sampleCounts.map(count => new Option(`${count} spp`, count)));
+    samplePicker.disabled = sampleCounts.length < 2;
+    const samples = sampleCounts.includes(initialSamples) ? initialSamples :
+      sampleCounts.includes(16) ? 16 : sampleCounts[0];
+    samplePicker.value = samples;
+    const scene = captures.find(item => item.inputs.samples === samples);
+    const rightScene = counterpart(scene);
     const leftCapture = scene.modes[leftMode.value];
     const rightCapture = rightScene.modes[rightMode.value];
     const urls = [imageUrl(left, leftCapture), imageUrl(right, rightCapture)];
@@ -192,6 +205,7 @@ async function start() {
     leftMode.value = runs.length > 1 ? "balanced" : "eco";
     rightMode.value = runs.length > 1 ? "balanced" : "high";
     scenePicker.addEventListener("change", refresh);
+    samplePicker.addEventListener("change", refresh);
     gain.addEventListener("input", updateGain);
     byId("benchmark").hidden = false;
     await refresh();

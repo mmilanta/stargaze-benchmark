@@ -95,7 +95,7 @@ def verify_capture(data, request, output):
         raise ValueError(f"Wrong PNG dimensions: {output.name}")
 
 
-def capture_scene(binary, stage, scene, suite, adapter, environment):
+def capture_scene(binary, stage, scene, suite, samples, adapter, environment):
     scene_id = scene["id"]
     if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", scene_id):
         raise ValueError(f"Invalid scene ID: {scene_id!r}")
@@ -103,7 +103,7 @@ def capture_scene(binary, stage, scene, suite, adapter, environment):
     request = {
         "version": 1, "scene": str(scene_path),
         "width": suite["width"], "height": suite["height"],
-        "samples": suite["samples"], "exposure": scene["exposure"], "adapter": adapter,
+        "samples": samples, "exposure": scene["exposure"], "adapter": adapter,
     }
     inputs = {key: request[key] for key in ("version", "width", "height", "samples", "exposure")}
     inputs["scene_sha256"] = hashlib.sha256(scene_path.read_bytes()).hexdigest()
@@ -114,7 +114,7 @@ def capture_scene(binary, stage, scene, suite, adapter, environment):
     scratch = stage / "repeat.png"
     try:
         for mode in MODES:
-            image = stage / f"{scene_id}-{mode}.png"
+            image = stage / f"{scene_id}-{mode}-{samples}spp.png"
             request["mode"] = mode
             dump_json(request_file, request)
             render_times = []
@@ -143,7 +143,8 @@ def capture_scene(binary, stage, scene, suite, adapter, environment):
                 "process_ms": process_times,
             }
             records[mode] = record
-            print(f"  {scene_id:16} {mode:8} {statistics.median(render_times):8.2f} ms", flush=True)
+            median = statistics.median(render_times)
+            print(f"  {scene_id:16} {mode:8} {samples:4} spp {median:8.2f} ms", flush=True)
     finally:
         request_file.unlink(missing_ok=True)
         scratch.unlink(missing_ok=True)
@@ -162,11 +163,12 @@ def capture_run(binary, ref, commit, suite, adapter):
         cases = []
         hardware = None
         for scene in suite["scenes"]:
-            result, device = capture_scene(binary, stage, scene, suite, adapter, environment)
-            if hardware is not None and device != hardware:
-                raise ValueError("GPU or driver changed within the run")
-            hardware = device
-            cases.append(result)
+            for samples in suite["samples"]:
+                result, device = capture_scene(binary, stage, scene, suite, samples, adapter, environment)
+                if hardware is not None and device != hardware:
+                    raise ValueError("GPU or driver changed within the run")
+                hardware = device
+                cases.append(result)
         hardware.update(cpu=cpu_name(), os=platform.system(), arch=platform.machine())
         dump_json(stage / "run.json", {
             "version": 1, "id": run_id, "ref": ref, "commit": commit, "created": now.isoformat(),
@@ -205,6 +207,14 @@ def run(args):
         raise ValueError("Suite contains duplicate scene IDs")
     if not isinstance(suite["repeats"], int) or suite["repeats"] < 1:
         raise ValueError("Suite repeats must be a positive integer")
+    samples = suite["samples"]
+    if type(samples) is int:
+        samples = [samples]
+    if (not isinstance(samples, list) or not samples
+            or any(type(value) is not int or not 1 <= value <= 4096 for value in samples)
+            or len(set(samples)) != len(samples)):
+        raise ValueError("Suite samples must be an integer or a list of distinct counts from 1 to 4096")
+    suite["samples"] = sorted(samples)
     for ref, commit in refs:
         print(f"{ref} ({commit})", flush=True)
         with tempfile.TemporaryDirectory(prefix="stargaze-benchmark-") as temporary:
