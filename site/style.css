@@ -61,6 +61,17 @@ input[type=range] { width: clamp(3rem, 7vw, 7rem); accent-color: var(--accent); 
 output { min-width: 2rem; }
 img, canvas { width: 100%; height: auto; display: block; background: #050709; border: 1px solid var(--line); }
 #diff-stats { margin-block: .8rem; font-size: .9rem; }
+.scene-preview {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  align-items: center;
+  gap: clamp(1rem, 3vw, 3rem);
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+.scene-preview p { margin-top: .5rem; }
+.capture-details { color: var(--muted); font-size: .9rem; }
 @media (max-width: 67rem) {
   form { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .capture-controls { grid-column: 1 / -1; padding-bottom: 0; }
@@ -71,5 +82,6 @@ img, canvas { width: 100%; height: auto; display: block; background: #050709; bo
   header > a { white-space: nowrap; font-size: .9rem; }
   form { grid-template-columns: minmax(0,1fr); }
   .images { grid-template-columns: minmax(0,1fr); }
+  .scene-preview { grid-template-columns: minmax(0,1fr); }
   input[type=range] { width: 6rem; }
 }

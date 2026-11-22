@@ -1,0 +1,42 @@
+# Synthetic eclipse at the edge of totality. At the pinned epoch the moon's
+# center is 998 km east of the star's sightline and 100,000 km forward.
+# The 1,000 km-radius moon has just covered the tiny stellar disc at the camera.
+version: 1
+name: Eclipse at the edge of totality
+time_days: 0
+camera:
+  body: world
+  latitude_deg: 0
+  longitude_deg: 0
+  height_m: 2
+  look_at: sun
+  direction: {azimuth_deg: 0, altitude_deg: 12}
+  fov_deg: 60
+  atmosphere: earthlike
+  ground: basalt
+bodies:
+  - id: sun
+    kind: star
+    radius_km: 1495.978707
+    luminosity: 0.8
+  - id: world
+    kind: planet
+    parent: sun
+    radius_km: 6371
+    albedo: [0, 0, 0]
+    orbit:
+      semi_major_axis_au: 1.0000088553104998
+      period_days: 365.256
+      inclination_deg: 90
+      mean_anomaly_deg: -102.00238674218993
+  - id: moon
+    kind: moon
+    parent: world
+    radius_km: 1000
+    albedo: [0, 0, 0]
+    orbit:
+      semi_major_axis_km: 101520.96744066554
+      period_days: 7
+      inclination_deg: 105.51943661555788
+      ascending_node_deg: 90
+      mean_anomaly_deg: 89.43674582287339
