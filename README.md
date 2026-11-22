@@ -14,7 +14,7 @@ should come from sources you trust because their builds and binaries run locally
 
 ```sh
 git -C ../stargaze fetch origin
-python3 benchmark.py run origin/benchmark/headless-baseline origin/benchmark/headless-render-v1
+python3 benchmark.py run origin/benchmark/headless-baseline origin/main
 ```
 
 Each argument is a branch, tag, or commit hash in the source checkout. The runner
@@ -29,7 +29,8 @@ can reuse a Cargo build cache. The suite's `samples` setting accepts a single
 count or a list of counts.
 
 Only revisions supporting the [headless render interface](#render-interface)
-can be run directly. The two initial refs carry the same interface on top of
+can be run directly. Stargaze `main` has this interface as of commit
+`24c8fe6`. The initial benchmark refs carry the same interface on top of
 Stargaze commits `852ab1c` and `6127a80`. The default builder uses
 `cargo build --locked --release --bin stargaze`. A different implementation can
 supply `--builder /path/to/executable`. The builder receives the source checkout
