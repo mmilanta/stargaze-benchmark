@@ -1,17 +1,16 @@
-# Ember Summit on Halo, two simulated minutes before Calyx completely
-# covers the second sun, Igni. Aur is already completely covered.
-# Double totality begins on model day 732.769816867167.
+# Ember Summit on Halo, three simulated seconds after Calyx covers Igni.
+# Aur is already fully covered. Double totality begins on day 732.769816867167.
 version: 1
-time_days: 732.768427978278
-name: Ember Summit before totality
+time_days: 732.769851589389
+name: Ember Summit in totality
 camera:
   body: halo
   latitude_deg: 35.0
   longitude_deg: -118.0
   height_m: 2.0
   look_at: calyx
-  # Frame the last sliver of Igni above the volcanic horizon.
-  direction: {azimuth_deg: 252, altitude_deg: 12}
+  # Frame the sunlit air beside Calyx and the shadowed lower-right sky.
+  direction: {azimuth_deg: 245, altitude_deg: 17}
   fov_deg: 50
   atmosphere: earthlike
   ground: basalt

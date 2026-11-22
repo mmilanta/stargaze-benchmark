@@ -6,14 +6,14 @@ a shared sample count. The dashboard shows median render times, both captures,
 an amplified difference image, and descriptive RGB difference statistics. There
 is no ground-truth image or quality score.
 
-## Ember Summit before totality
+## Ember Summit in totality
 
-Choose **Ember Summit before totality** in the dashboard's Scene menu to compare
-renderer revisions at the end of Igni's ingress. The [pinned scene](scenes/ember-summit-before-totality.yaml)
-starts two simulated minutes before Calyx fully covers Igni. Aur is already
-covered, and less than 1% of Igni's disc remains visible. Both versions use a
-fixed exposure of 4 to show the faint glow above the volcanic horizon. Open the
-scene in Stargaze with `stargaze --config scenes/ember-summit-before-totality.yaml`.
+Choose **Ember Summit in totality** in the dashboard's Scene menu to compare
+renderer revisions three simulated seconds after Calyx fully covers Igni.
+Both suns are hidden at the observatory. At the shared exposure of 128, the
+[pinned scene](scenes/ember-summit-in-totality.yaml) shows illuminated air on
+the upper left, Calyx and its rings, and the shadowed sky on the lower right.
+Open the scene in Stargaze with `stargaze --config scenes/ember-summit-in-totality.yaml`.
 
 The published captures were added to the existing runs using the same
 renderer commits, GPU, and driver. Each new scene entry records its capture date.

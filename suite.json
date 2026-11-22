@@ -8,6 +8,6 @@
     {"id": "crescent-moon", "label": "Crescent moonlight", "exposure": 64},
     {"id": "halo-volcano", "label": "Halo volcano", "exposure": 0.08},
     {"id": "erg-dunes", "label": "Erg dunes", "exposure": 0.16},
-    {"id": "ember-summit-before-totality", "label": "Ember Summit before totality", "exposure": 4}
+    {"id": "ember-summit-in-totality", "label": "Ember Summit in totality", "exposure": 128}
   ]
 }
